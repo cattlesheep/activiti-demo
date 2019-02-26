@@ -1,0 +1,32 @@
+#MySQL
+spring:
+ datasource:
+  driver-class-name: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306/activitiDB?characterEncoding=utf8
+  username: root
+  password: 15946997910
+
+  activiti:
+   url: jdbc:mysql://localhost:3306/activitiDB?characterEncoding=utf8
+   username: root
+   password: 15946997910
+   driver-class-name: com.mysql.jdbc.Driver
+   maxActive: 20
+   initialSize: 5
+   minIdle: 5
+   maxWait: 60000
+   maxPoolPreparedStatementPerConnectionSize: 20
+   timeBetweenEvictionRunsMillis: 60000
+   minEvictableIdleTimeMillis: 300000
+   poolPreparedStatements: true
+
+mybatis:
+ #config-location: classpath:config/mybatis-config.xml
+ mapper-locations: classpath:mapper/**/*.xml
+ type-aliases-package: com.law.activitidemo.*.dao
+
+generator:
+ driver: com.mysql.jdbc.Driver
+ url: jdbc:mysql://localhost:3306/activitiDB?characterEncoding=utf8
+ username: root
+ password: 15946997910
