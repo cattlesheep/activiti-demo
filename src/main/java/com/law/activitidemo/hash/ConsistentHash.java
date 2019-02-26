@@ -99,6 +99,9 @@ public class ConsistentHash<T> {
         //选取hash函数
         HashFunction hashFunction = Hashing.murmur3_128();
         ConsistentHash<String> consistentHash = new ConsistentHash<>(hashFunction,100,services);
+        Collection<String> node = new ArrayList<>();
+        node.add("192.168.1.213:8080");
+        consistentHash.add(node);
 
         System.out.println(consistentHash.getNode("langpeng"));
         System.out.println(consistentHash.getNode("langpeng1"));
